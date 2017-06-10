@@ -13,7 +13,7 @@ app.listen(port, function(){
 	console.log('listening on port ' + port);
 });
 
-app.post('/friday!!', function(req, res, next) {
+app.post('/friday', function(req, res, next) {
 	var botPayload = {
 		text: "Did someone say Friday?? "
 	};
@@ -25,7 +25,7 @@ app.post('/friday!!', function(req, res, next) {
 	}
 });
 
-app.post('/motivate me', function(req, res, next) {
+app.post('/motivate', function(req, res, next) {
 	var userName = req.body.user_name;
 	var botPayload = {
 		text: "Hey " + username + ", keep being awesome.  - Elegran bot "
