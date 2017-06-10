@@ -13,27 +13,21 @@ app.listen(port, function(){
 	console.log('listening on port ' + port);
 });
 
-app.post('/friday', function(req, res, next) {
+app.post('/keywords', function(req, res, next) {
 	var userName = req.body.user_name;
-	var botPayload = {
-		text: "Did someone say Friday?? "
+
+	if (req.body.trigger_word == 'Friday!') {
+		var botPayload = {
+			text: "Did someone say Friday?? "
+		}
+	} else if (req.body.trigger_word == 'motivate me') {
+		var botPayload = {
+			text: "Hey " + userName + ", keep being awesome.  - Elegran bot "
+		};
 	};
 
 	if (userName !== 'slackbot') {
-		return res.status(200).json(botPayload);
-	} else {
-		return res.status(200).end();
-	}
-});
-
-app.post('/motivate', function(req, res, next) {
-	var userName = req.body.user_name;
-	var botPayload = {
-		text: "Hey " + userName + ", keep being awesome.  - Elegran bot "
-	};
-
-	if (userName !== 'slackbot') {
-		return res.status(200).json(botPayload);
+			return res.status(200).json(botPayload);
 	} else {
 		return res.status(200).end();
 	}
