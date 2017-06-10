@@ -14,6 +14,7 @@ app.listen(port, function(){
 });
 
 app.post('/friday', function(req, res, next) {
+	var userName = req.body.user_name;
 	var botPayload = {
 		text: "Did someone say Friday?? "
 	};
@@ -28,7 +29,7 @@ app.post('/friday', function(req, res, next) {
 app.post('/motivate', function(req, res, next) {
 	var userName = req.body.user_name;
 	var botPayload = {
-		text: "Hey " + username + ", keep being awesome.  - Elegran bot "
+		text: "Hey " + userName + ", keep being awesome.  - Elegran bot "
 	};
 
 	if (userName !== 'slackbot') {
