@@ -14,7 +14,6 @@ app.listen(port, function(){
 });
 
 app.post('/friday!!', function(req, res, next) {
-	var userName = req.body.user_name;
 	var botPayload = {
 		text: "Did someone say Friday?? "
 	};
